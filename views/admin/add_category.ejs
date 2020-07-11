@@ -1,0 +1,25 @@
+<%- include("../adminheader") %>
+
+    <%- messages('messages', locals) %>
+    <% if(errors){ %>
+      <% errors.forEach(function(error){ %>
+        <div class="alert alert-danger">
+          <%= error.msg %>
+        </div>
+      <% }); %>
+    <% } %>
+
+    <h2 class="page-title">Add a Category</h2>
+    <a href="/admin/categories" class="btn btn-outline-dark">Back to all Categories</a>
+    <br><br>
+    
+    <form method="POST" action="/admin/categories/add-category">
+        <div class="form-group">
+            <label for="">Title</label>
+            <input class="form-control" type="text" name="title" value="<%= title %>" placeholder="title">
+        </div>
+        
+        <button class="btn btn-outline-info">Submit</button>
+    </form>
+
+<%- include("../adminfooter") %>

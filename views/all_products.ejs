@@ -1,0 +1,178 @@
+<%- include("header") %>
+
+
+<div class="container">
+    <img class="img-thumbnail" src="/images/big-add.png" alt="">
+</div>
+
+<br><br>  
+<nav aria-label="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">All Products</li>
+        </ol>
+    </div>
+</nav>
+
+<br><br><br>
+<div class="container">
+  <%- messages('messages', locals) %>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Category</h2>
+                    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Sportswear
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="sportswear" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                    <li><a href="#">Nike </a></li>
+                                    <li><a href="#">Under Armour </a></li>
+                                    <li><a href="#">Adidas </a></li>
+                                    <li><a href="#">Puma</a></li>
+                                    <li><a href="#">ASICS </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                                    <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                    Mens
+                                </a>
+                            </h4>
+                            </div>
+                            <div id="mens" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                    <li><a href="#">Fendi</a></li>
+                                    <li><a href="#">Guess</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                Womens
+                                </a>
+                            </h4>
+                            </div>
+                            <div id="womens" class="panel-collapse collapse">
+                                 <div class="panel-body">
+                                    <ul>
+                                    <li><a href="#">Fendi</a></li>
+                                    <li><a href="#">Guess</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Kids</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Fashion</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Households</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Interiors</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Clothing</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title"><a href="#">Bags</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                              <h4 class="panel-title"><a href="#">Shoes</a></h4>
+                            </div>
+                        </div>
+                    </div><!--/category-products-->
+                    
+                    <div class="brands_products"><!--brands_products-->
+                        <h2>Brands</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
+                                <li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+                                <li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
+                            </ul>
+                        </div>
+                    </div><!--/brands_products-->
+                    <div class="shipping text-center">
+                        <img class="img-fluid" src="/images/shipping.jpg" alt="">
+                    </div>
+                </div>
+            </div> <!-- left side bar col ends here-->
+            <div class="col-sm-9">
+                <div class="features_items"><!--features_items-->
+                <h2 class="title text-center">All Products</h2>
+                <div class="row">
+                    <% products.forEach(function(p) { %>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">                                        
+                                    <img src="/product_images/<%= p.id %>/<%= p.image %>" alt="" class="pimage">
+                                    <h2>&#8358;<%= parseFloat(p.price).toFixed(2) %></h2>
+                                    <p><%= p.title %></p>
+                                    <a href="/cart/add/<%= p.slug %>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+      
+
+
+
+
+
+    <script>
+        $('#a').click(function(e) {
+            e.preventDefault();
+            $('.log')
+            .append("default" + event.type + "prevented")
+            .appendTo('.log');
+        });
+    </script>
+
+<%- include("footer") %>

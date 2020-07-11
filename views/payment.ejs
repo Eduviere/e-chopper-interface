@@ -1,0 +1,146 @@
+<%- include("header") %>
+
+<br><br>
+<div class="container">
+    <img class="img-thumbnail" src="/images/big-add.png" alt="">
+</div>
+
+<br><br>  
+<nav aria-label="breadcrumb">
+  <h2>Checkout</h2>
+    <ol class="breadcrumb pull-right">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+    </ol>
+</nav>
+
+<br><br><br>
+<div class="container">
+  <%- messages('messages', locals) %>
+</div>
+
+
+<div class="container">
+    <section class="header">
+        <h3>Checkout</h3>
+        <hr>
+    </section>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <!-- COLLAPSE -->
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Cash On Delivery (COD)
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <form method="POST" action="" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="">Full name: </label>
+            <input class="form-control" type="text" name="name" value="" placeholder="Cms Shopping Cart" required>
+          </div>
+          <div class="form-group">
+            <label for="">Phone Number: </label>
+            <input class="form-control" type="text" name="card number" value="" placeholder="xxxx xxxx xxxx" required>
+          </div>
+            <div class="form-group">
+              <label for="">CVV</label>
+              <input class="form-control" type="text" name="cvv" value="" placeholder="xxxx" required>
+            </div>
+            <div class="form-group">
+              <label for="">Expiration Date</label>
+              <input class="form-control" type="text" name="valid" value="" placeholder="MM/YY" required>
+            </div>
+            <button class="btn btn-success">Proceed Payment</button>
+          </form>            
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Credit/Debit Card
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+          <form method="POST" action="" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="">Name on Card </label>
+              <input class="form-control" type="text" name="card number" value="" placeholder="Cms Shopping Cart" required>
+            </div>
+            <div class="form-group">
+              <label for="">Card Number</label>
+              <input class="form-control" type="text" name="card number" value="" placeholder="xxxx xxxx xxxx" required>
+            </div>
+            <div class="form-group">
+              <label for="">CVV</label>
+              <input class="form-control" type="text" name="cvv" value="" placeholder="xxxx" required>
+            </div>
+            <div class="form-group">
+              <label for="">Expiration Date</label>
+              <input class="form-control" type="text" name="valid" value="" placeholder="MM/YY" required>
+            </div>
+            <button class="btn btn-success">Proceed Payment</button>
+          </form>            
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Paypal
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <img class="p-logo" src="/images/paypal.png" alt="">
+            <p>Important: You will be redirected to PayPal's website to securely complete your payment.</p>
+            <a href="" class="btn btn-primary paypal"> Checkout with Paypal</a>
+          </div>
+          <div class="col-md-6">
+            <form method="POST" action="" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="">Card Number</label>
+                <input class="form-control" type="text" name="card number" value="" placeholder="xxxx xxxx xxxx" required>
+              </div>
+              <div class="form-group">
+                <label for="">CVV</label>
+                <input class="form-control" type="text" name="cvv" value="" placeholder="xxxx" required>
+              </div>
+              <div class="form-group">
+                <label for="">Card Holder Name</label>
+                <input class="form-control" type="text" name="holder" value="" placeholder="xxxx" required>
+              </div>
+              <div class="form-group">
+                <label for="">Valid Thru</label>
+                <input class="form-control" type="text" name="valid" value="" placeholder="MM/YY" required>
+              </div>
+              <button class="btn btn-success">Proceed Payment</button>
+            </form>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+
+<%- include("footer") %>

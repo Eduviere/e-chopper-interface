@@ -1,0 +1,58 @@
+<%- include("../adminheader") %>
+
+    <%- messages('messages', locals) %>
+    <% if(errors){ %>
+      <% errors.forEach(function(error){ %>
+        <div class="alert alert-danger">
+          <%= error.msg %>
+        </div>
+      <% }); %>
+    <% } %>
+
+    <h2 class="page-title">Pages</h2>
+    <a href="/admin/pages/add-page" class="btn btn-outline-dark"> Add a new page </a>
+    <br><br>  
+  
+  <table class="table table-striped sorting">
+    <thead>
+      <tr class="home">
+        <th>Title</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% pages.forEach(function(pages){ %>
+        <tr id="id_<%= pages._id %>" class="<%= pages.slug %>">
+          <td><%= pages.title %></td>
+          <td><a href="/admin/pages/edit-page/<%= pages._id %>">Edit</a></td>
+          <% if(pages.slug == "home"){ %>
+            <td></td> 
+          <% } else { %>
+            <td><a class="confirmDeletion" href="/admin/pages/delete-page/<%= pages._id %>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+          <% } %>                
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+
+
+
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>    
+
+<script>
+    $('tbody').sortable({
+        items: "tr:not('.home')",
+        placeholder: "ui-state-highlight",
+        update: function() {
+            var ids = $('tbody').sortable("serialize");
+            var url = "/admin/pages/reorder-pages";
+
+            $.post(url, ids);
+        }
+    });
+
+</script>      
+
+<%- include("../adminfooter") %>

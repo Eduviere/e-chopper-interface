@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>cmsShoppingCart | Admin area</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/css/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/css/adminstyle.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar  -->
+      <nav id="sidebar">
+        <div class="sidebar-header text-center">
+          <img src="/images/admin.jpg" alt="">
+          <h3>Admin Panel</h3>
+          <i> <p>cmsShoppingCart by Michael Paul</p></i>
+          <a class="logout" href="/users/logout"> <i class="fa fa-user" aria-hidden="true"></i> Logout </a>
+          <br><br>
+          <hr class="rule">
+          <br>
+          <a class="back-to-home" href="/"><h4>Eshopper</h4></a>
+        </div>
+
+        <ul class="list-unstyled components">  
+          <li>
+            <a href="/admin/pages"> Pages 
+              <i style="float: right;" class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/products"> Products
+              <i style="float: right;" class="fa fa-plus" aria-hidden="true"></i> 
+            </a>
+          </li>
+          <li>
+            <a href="/admin/categories"> Categories
+              <i style="float: right;" class="fa fa-plus" aria-hidden="true"></i> 
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+              <i class="fas fa-align-left"></i>
+              <span>Toggle Sidebar</span>
+            </button>            
+          </div>
+        </nav>
+
+        

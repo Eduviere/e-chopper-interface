@@ -1,0 +1,108 @@
+<%- include("header") %>
+
+<div class="container">
+    <img class="img-thumbnail" src="/images/big-add.png" alt="">
+</div>
+
+<br><br>  
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+    </ol>
+</nav>
+
+<div class="container">
+  <%- messages('messages', locals) %>
+</div>
+
+<% if (typeof cart !== "undefined") { %>
+  <section class="header">
+      <h3>My Cart</h3>
+      <hr>
+  </section>
+  
+  <div class="container">
+    <table class="table table-striped align-middle">
+      <tr>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th></th>
+        <th>Subtotal</th>
+      </tr>
+
+      <% var total = 0; %>
+      <% cart.forEach(function(product){ %>
+        <% var sub = parseFloat(product.qty * product.price).toFixed(2) %>
+        <% total += +sub %>
+        <tr>
+          <td><img class="cpi" src="<%= product.image %>" alt=""></td>
+          <td><%= product.title %></td>
+          <td>&#8358;<%= product.price %></td>
+          <td><%= product.qty %></td>
+          <td>
+            <a class="cart-update" href="/cart/update/<%= product.title %>?action=add">+</a>&NonBreakingSpace;
+            <a class="cart-update" href="/cart/update/<%= product.title %>?action=remove">-</a>&NonBreakingSpace;
+            <a class="cart-clear" href="/cart/update/<%= product.title %>?action=clear">Clear</a>&NonBreakingSpace;
+          </td>
+          <td><%= sub %></td>
+        </tr>  
+      <% }); %>
+      <tr>
+        <td colspan="6" align="right"><strong>Total: </strong>&#8358; <%= parseFloat(total).toFixed(2) %> </td>
+      </tr>
+      <tr>
+        <td colspan="5" align="right">
+          <a class="btn btn-danger clearcart" href="/cart/clear">Clear Cart</a>
+        </td>
+        <td colspan="5" align="right">
+          <a class="btn btn-primary buynow" href="/checkout/payment">Buy Now</a>
+        </td>
+      </tr>
+    </table>
+
+    <!-- <input type="hidden" name="cmd" value="_ext-enter">
+    <form action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
+       <input type="hidden" name="cmd" value="_xclick">
+       <input type="hidden" name="business" value="michaeltimsocial@gmail.com">
+       <input type="hidden" name="item_name" value="Item Name">
+       <input type="hidden" name="currency_code" value="USD">
+       <input type="hidden" name="amount" value="0.00">
+       <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+    </form> -->
+
+
+    <input type="hidden" name="cmd" value="_ext-enter">
+<form action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
+  <input type="hidden" name="cmd" value="_cart">
+  <input type="hidden" name="redirect_cmd" value="_xclick">
+   <input type="hidden" name="business" value="michaeltimsocial@gmail.com">
+    <% var num = 0; %>
+    <% cart.forEach(function(p){ %>
+      <% num++ %>
+      <input type="hidden" name="item_name_<%= num %>" value="<%= p.title %>">
+      <input type="hidden" name="amount_<%= num %>" value="<%= p.price %>">
+      <input type="hidden" name="quantity_<%= num %>" value="<%= p.qty %>">
+    <% }); %>
+   <input type="hidden" name="currency_code" value="USD">
+   <input type="hidden" name="amount" value="<%= total %>">
+   <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+</form>
+
+
+  </div>
+<% } else { %>
+  <h3 class="text-center">Your cart is empty</h3>
+<% } %>
+
+<script>
+  $(function() {
+    $('a.clearcart').on('click', function(){
+      if(!confirm('Confirm Clear Cart')) 
+        return false;
+    });
+  });
+</script>
+<%- include("footer") %>

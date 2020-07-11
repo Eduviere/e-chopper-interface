@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title></title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/css/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Eshopper css link here -->
+    <link href="/css/main.css" rel="stylesheet">
+
+    		<!-- CSS here -->
+        <link rel="stylesheet" href="/css/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="/css/css/flaticon.css">
+        <link rel="stylesheet" href="/css/css/slicknav.css">
+        <link rel="stylesheet" href="/css/css/animate.min.css">
+        <link rel="stylesheet" href="/css/css/magnific-popup.css">
+        <link rel="stylesheet" href="/css/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="/css/css/themify-icons.css">
+        <link rel="stylesheet" href="/css/css/slick.css">
+        <link rel="stylesheet" href="/css/css/nice-select.css">
+        <link rel="stylesheet" href="/css/css/style.css">
+  </head>
+  <body>
+    <!-- estore navigation starts here  -->
+    <!-- Preloader Start -->
+    <!-- <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Preloader Start -->
+
+    <header>
+        <!-- Header Start -->
+       <div class="header-area">
+            <div class="main-header ">
+                <div class="header-top top-bg d-none d-lg-block">
+                   <div class="container-fluid">
+                       <div class="col-xl-12">
+                            <div class="row d-flex justify-content-between align-items-center">
+                                <div class="header-info-left d-flex">
+                                    <ul class="contact-now">     
+                                        <li>+2349038576877</li>
+                                    </ul>
+                                    <ul class="contact-now">     
+                                        <li>michaeltimsocial@gmail.com</li>
+                                    </ul>
+                                </div>
+                                <div class="header-info-right">
+                                   <ul>                                          
+                                       <li><a href="/users/register">My Account </a></li>
+                                       <li><a href="/cart/checkout">Cart</a></li>
+                                       <li><a href="/cart/checkout">Checkout</a></li>
+                                   </ul>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+                </div>
+               <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
+                                <div class="logo">
+                                  <a href="/"><img src="/logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>                                                
+                                        <ul id="navigation">    
+                                            <% pages.forEach(function(page) { %>
+                                                <% if (page.slug == "home") { %>
+                                                    <li><a href="/"><%= page.title %></a></li>
+                                                <% } else { %>
+                                                    <li><a href="/<%= page.slug %>"><%= page.title %> </a></li>
+                                                <% } %>
+                                            <% }); %>                                                                                                                           
+                                            
+                                            <!-- <li class="hot"><a href="#">Latest</a>
+                                                <ul class="submenu">
+                                                    <li><a href="#"> Product list</a></li>
+                                                    <li><a href="#"> Product Details</a></li>
+                                                </ul>
+                                            </li> -->
+                                            <li><a href="#">Products</a>
+                                                <ul class="submenu">
+                                                    <li><a href="/products">All Products</a></li>
+                                                    <% categories.forEach(function(c) { %>
+                                                        <li><a href="/products/<%= c.slug %>"><%= c.title %></a></li>
+                                                    <% }); %>
+                                                </ul>
+                                            </li>
+                                            
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div> 
+                            <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
+                                <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
+                                    <li class="d-none d-xl-block">
+                                        <div class="form-box f-right ">
+                                            <input type="text" name="Search" placeholder="Search">
+                                            <div class="search-icon">
+                                                <i class="fas fa-search special-tag"></i>
+                                            </div>
+                                        </div>
+                                     </li>
+                                    
+                                    <!-- <li>
+                                        <div class="shopping-card">
+                                            <a href="/cart/checkout"><i class="fas fa-shopping-cart"></i></a>
+                                        </div>
+                                    </li> -->
+                                    <li>
+                                    <div class="wrapper0">    
+                                        <a class="nav-link" href="/cart/checkout"><i id="cart-icon" class="fa" style="font-size: 24px">&#xf07a;</i>
+                                            <span class="cart-0">    
+                                                <% if (typeof cart !== "undefined") { %>
+                                                    <%= cart.length %>
+                                                <% } else { %>
+                                                    0
+                                                <% } %>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    </li>
+                                    <% if(user) { %>
+                                        <li class="d-none d-lg-block"> 
+                                            <a href="/users/logout" class="btn btn-info">
+                                                Hi, <%= user.username %> (Logout)
+                                            </a>
+                                        </li>
+                                    <% } else { %>
+                                        <li class="d-none d-lg-block"> 
+                                            <a href="/users/register" class="btn btn-info">
+                                                Register
+                                            </a>
+                                        </li>
+                                        <li class="d-none d-lg-block"> 
+                                            <a href="/users/login" class="btn btn-info">
+                                                Login
+                                            </a>
+                                        </li>
+                                    <% } %>
+                                    <% if(user && user.admin == 1) { %>
+                                        <li class="d-none d-lg-block"> 
+                                            <a href="/admin/pages" class="btn btn-info">
+                                                Admin Area
+                                            </a>
+                                        </li>
+                                    <% } %>
+
+                                    
+                                </ul>
+                            </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+       </div>
+        <!-- Header End -->
+    </header>
+
+    
+
+
+
+
+
+
+
+
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">ShoPPER</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <% pages.forEach(function(page){ %>
+              <% if (page.slug == "home") { %>
+                <li class="nav-item"><a class="nav-link" href="/"><%= page.title %></a></li>  
+              <% } else { %>
+                <li class="nav-item"><a class="nav-link" href="<%= page.slug %>"><%= page.title %></a></li>
+              <% } %>
+            <% }); %>
+            <li class="nav-item dropdown">
+        			<a class="nav-link dropdown-toggle zoom" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Products </a>
+        				
+        			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/products">All Products</a>
+                <a class="dropdown-item" href="/products/food">Food</a>
+                <a class="dropdown-item" href="/products/drinks">Drinks</a>
+                <a class="dropdown-item" href="/products/t-shirts">T-Shirts</a>
+        			</div>
+      			</li>
+          </ul>
+          <ul class="navbar-nav navbar-right">
+            
+            <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-search"> </i>Search</a></li>
+            <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-user"> </i>Login</a></li>
+            <li class="nav-item"><a href="" class="nav-link"><i class="fas fa-user-plus"> </i>Signup</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cart/checkout"><i class="fa" style="font-size: 24px">&#xf07a;</i>
+                <span class="badge badge-warning" id="lblCartCount">
+                <% if (typeof cart !== "undefined") { %>
+                  <%= cart.length %>
+                <% } else { %>
+                  0
+                <% } %>
+                </span>
+              </a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav> -->
+
+    
+  
+    
+    
+        

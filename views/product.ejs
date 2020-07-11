@@ -1,0 +1,79 @@
+<%- include("header") %>
+
+<br><br>
+<div class="container">
+    <img class="img-thumbnail" src="/images/big-add.png" alt="">
+</div>
+
+<br><br>  
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">All Products</li>
+    </ol>
+</nav>
+
+<br><br><br>
+<div class="container">
+  <%- messages('messages', locals) %>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-text"><%= p.title %></h5>
+          <img src="/product_images/<%= p.id %>/<%= p.image %>" alt="" class="pimage">                    
+          <p><%= p.desc %></p>    
+          <span class="naira">&#8358;<%= parseFloat(p.price).toFixed(2) %></span>
+          <% if(loggedIn) { %>
+            <a class="btn btn-danger btn-block" href="/cart/add/<%= p.slug %>"> Add to Cart </a>
+          <% } else { %>
+            <p>You must be logged in to purchase items</p>
+          <% } %>
+          <!-- <button type="button" class="btn btn-danger btn-block">Add to Cart</button> -->
+        </div>
+      </div>
+    </div>    
+    <div class="col-md-4"></div>
+  </div>
+</div>
+  
+
+<!-- 
+<div class="container">
+  <div class="row">
+    <h1 class="page-header"><%= p.title %></h1>
+    <div class="col-12 col-md-5">
+      <img src="/product_images/<%= p.id %>/<%= p.image %>" alt="" class="spi"> <br>
+    </div>
+    <div class="col-12 col-md-7">
+      <p><%= p.desc %></p>
+      <p>&#8358;<%= parseFloat(p.price).toFixed(2) %></p>
+      <p><a href="/cart/add/<%= p.slug %>"> Add to Cart </a></p>
+    </div>
+    <div class="col-12"> -->
+      
+      <div class="row text-center"> 
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <ul class="gallery">
+            <% galleryImages.forEach(function(image){ %>
+              <% if (image != "thumbs") { %>
+                <li>
+                  <a data-fancybox="gallery" href="/product_images/<%= p.id %>/gallery/<%= image %>">
+                    <img src="/product_images/<%= p.id %>/gallery/thumbs/<%= image %>" alt="">
+                  </a>
+                </li>
+              <% } %>
+            <% }); %>
+          </ull>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    
+
+<%- include("footer") %>

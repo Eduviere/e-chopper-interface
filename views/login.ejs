@@ -1,0 +1,95 @@
+<%- include("header") %>
+
+<div class="container-fluid">
+<%- messages('messages', locals) %>
+<% if(errors){ %>
+  <% errors.forEach(function(error){ %>
+    <div class="alert alert-danger">
+      <%= error.msg %>
+    </div>
+<% }); %>
+<% } %>
+</div>
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-md-4 col-sm-6 col-12">
+      <i class="fa fa-baby-carriage img-logo"></i>
+      <div class="wrapper-box">
+        <div class="form-box">
+          <div class="container-fluid">
+            <ul class="login-form d-flex justify-content-center">
+              <li><a class="active" href="/users/login"><h3>LOGIN</h3></a></li>
+              <li><a class="r-login" href="/users/register"><h3>REGISTER</h3></a></li>        
+            </ul>
+          </div>
+          <br><br>
+          <div class="container">
+            <form method="POST" action="/users/login">
+              <div class="container">
+                <input type="text" name="username" class="input-field" placeholder="Username">
+                <input type="password" name="password" class="input-field" placeholder="Enter Password">
+              </div>
+              <br><br>
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-user"></i>
+                <span class="ibtn"> LOGIN </span>
+              </button>
+              <br><br>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+</div>
+  
+
+
+<!-- <div class="hero px-0">
+  <div class="form-box">
+    <div class="button-box">
+      <div id="btnuser"></div>
+      <button class="btn-tog" type="button" onclick="login()">Login</button>
+    </div>
+    <div class="social-icons"></div>
+    <form id="login" class="reg-log" method="POST" action="/users/login">
+      <input type="text" name="username" class="input-field" placeholder="username" required>
+      <input type="password" name="password" class="input-field" placeholder="Enter Password" required>
+      <input type="checkbox" class="check-box"><span>Remember Password</span>
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+  </div>
+</div> -->
+
+ <!-- <p>What is Lorem Ipsum?
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    
+    Why do we use it?
+    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).    
+</p> -->
+
+
+<script>
+  var x = document.getElementById("login");
+  var y = document.getElementById("register");
+  var z = document.getElementById("btnuser");
+
+  function register(){
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    z.style.left = "110px";
+  }
+
+  function login(){
+    x.style.left = "50px";
+    y.style.left = "450px";
+    z.style.left = "0";
+  }
+
+</script>
+
+  
+<%- include("footer") %>
