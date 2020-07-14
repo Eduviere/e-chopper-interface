@@ -1,18 +1,38 @@
 var express = require('express'),
 router      = express.Router(),
+Product     = require('../models/products'),
 Page        = require('../models/page');
-
 
 // GET /
 router.get('/', function(req, res){
-    Page.findOne({slug: 'home'}, function(err, page){
+    Page.findOne({slug: 'home'}, function(err, page, products){
         if (err)
             console.log(err);
         
-        res.render('index', {
-            title: page.title,
-            content: page.content
+        Product.find(function(err, products){
+            if (err)
+                console.log(err);
+            
+            res.render('index', {
+                title: page.title,
+                content: page.content,
+                products: products
+            });
         });
+    });
+});
+
+// GET Contact Us page
+router.get('/contact-us', function(req, res){
+    res.render('contact-us', {
+        title: 'cmsShoppingCart | Contact Us'
+    });
+});
+
+// GET About page
+router.get('/about', function(req, res){
+    res.render('about', {
+        title: 'cmsShoppingCart | About Us'
     });
 });
 

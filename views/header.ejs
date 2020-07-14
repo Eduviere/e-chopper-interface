@@ -42,6 +42,7 @@
     </div> -->
     <!-- Preloader Start -->
 
+    
     <header>
         <!-- Header Start -->
        <div class="header-area">
@@ -75,7 +76,7 @@
                             <!-- Logo -->
                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
                                 <div class="logo">
-                                  <a href="/"><img src="/logo.png" alt=""></a>
+                                  <a href="/"><img class="logo-img" src="/images/logo2.png" alt=""></a>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
@@ -90,7 +91,7 @@
                                                     <li><a href="/<%= page.slug %>"><%= page.title %> </a></li>
                                                 <% } %>
                                             <% }); %>                                                                                                                           
-                                            
+
                                             <!-- <li class="hot"><a href="#">Latest</a>
                                                 <ul class="submenu">
                                                     <li><a href="#"> Product list</a></li>
@@ -105,13 +106,55 @@
                                                     <% }); %>
                                                 </ul>
                                             </li>
-                                            
+                                            <li><a href="/users/login">Accounts <i class="fa fa-user"></i></a>
+                                                <ul class="submenu">
+                                                    <% if(user) { %>
+                                                        <li>
+                                                            <a href="/users/logout">
+                                                                Hi, <%= user.username %> (Logout)
+                                                            </a>
+                                                        </li>
+                                                    <% } else { %>
+                                                        <li> 
+                                                            <a href="/users/register">
+                                                                Register
+                                                            </a>
+                                                        </li>
+                                                        <li> 
+                                                            <a href="/users/login">
+                                                                Login
+                                                            </a>
+                                                        </li>
+                                                    <% } %>
+                                                    <% if(user && user.admin == 1) { %>
+                                                        <li> 
+                                                            <a href="/admin/pages">
+                                                                Admin Area
+                                                            </a>
+                                                        </li>
+                                                    <% } %>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div> 
+                            
                             <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
                                 <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
+                                    <li>
+                                        <div class="wrapper0">    
+                                            <a href="/cart/checkout"><i id="cart-icon" class="fa" style="font-size: 22px">&#xf07a;</i>
+                                                <span class="cart-0">    
+                                                    <% if (typeof cart !== "undefined") { %>
+                                                        <%= cart.length %>
+                                                    <% } else { %>
+                                                        0
+                                                    <% } %>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </li>
                                     <li class="d-none d-xl-block">
                                         <div class="form-box f-right ">
                                             <input type="text" name="Search" placeholder="Search">
@@ -119,53 +162,13 @@
                                                 <i class="fas fa-search special-tag"></i>
                                             </div>
                                         </div>
-                                     </li>
+                                    </li>
                                     
                                     <!-- <li>
                                         <div class="shopping-card">
                                             <a href="/cart/checkout"><i class="fas fa-shopping-cart"></i></a>
                                         </div>
                                     </li> -->
-                                    <li>
-                                    <div class="wrapper0">    
-                                        <a class="nav-link" href="/cart/checkout"><i id="cart-icon" class="fa" style="font-size: 24px">&#xf07a;</i>
-                                            <span class="cart-0">    
-                                                <% if (typeof cart !== "undefined") { %>
-                                                    <%= cart.length %>
-                                                <% } else { %>
-                                                    0
-                                                <% } %>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    </li>
-                                    <% if(user) { %>
-                                        <li class="d-none d-lg-block"> 
-                                            <a href="/users/logout" class="btn btn-info">
-                                                Hi, <%= user.username %> (Logout)
-                                            </a>
-                                        </li>
-                                    <% } else { %>
-                                        <li class="d-none d-lg-block"> 
-                                            <a href="/users/register" class="btn btn-info">
-                                                Register
-                                            </a>
-                                        </li>
-                                        <li class="d-none d-lg-block"> 
-                                            <a href="/users/login" class="btn btn-info">
-                                                Login
-                                            </a>
-                                        </li>
-                                    <% } %>
-                                    <% if(user && user.admin == 1) { %>
-                                        <li class="d-none d-lg-block"> 
-                                            <a href="/admin/pages" class="btn btn-info">
-                                                Admin Area
-                                            </a>
-                                        </li>
-                                    <% } %>
-
-                                    
                                 </ul>
                             </div>
                             <!-- Mobile Menu -->

@@ -301,6 +301,23 @@ li.breadcrumb-item a {
     color: #635c5c;
 }
 
+a.cart-u {
+    color: #000000;
+}
+
+a.cart-u:hover {
+    color: #ffc107;
+}
+
+a.cart-c {
+    color: #000000;
+}
+
+a.cart-c:hover {
+    color: #8e0e00;
+}
+
+
 a.cart-update {
     color: #ffffff;
     font-size: 18px;
@@ -312,7 +329,6 @@ a.cart-update {
     padding-right: 8px;
     padding-top: 2px;
     padding-bottom: 2px;
-
 }
 
 a.cart-update:hover {
@@ -350,12 +366,15 @@ a.cart-clear:hover {
 
 .img-logo {
     width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 2px solid rgb(211, 205, 205);
+    height: 70px;   
     display: block;
     margin: -30px auto;
 
+}
+
+.logo-img {
+    width: 110px;
+    height: 50px;
 }
 
 .wrapper-box {

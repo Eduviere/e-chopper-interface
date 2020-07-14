@@ -43,148 +43,209 @@
   </div>
     
   <section>
-    <div class="container">
+    
       <div class="row">
         <div class="col-sm-3">
           <div class="left-sidebar">
             <h2>Category</h2>
-              <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                          Sportswear
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="sportswear" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul>
-                          <li><a href="#">Nike </a></li>
-                          <li><a href="#">Under Armour </a></li>
-                          <li><a href="#">Adidas </a></li>
-                          <li><a href="#">Puma</a></li>
-                          <li><a href="#">ASICS </a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordian" href="#mens">
-                          <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                          Mens
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="mens" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul>
-                          <li><a href="#">Fendi</a></li>
-                          <li><a href="#">Guess</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                    
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordian" href="#womens">
-                          <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                          Womens
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="womens" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul>
-                          <li><a href="#">Fendi</a></li>
-                          <li><a href="#">Guess</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <% categories.forEach(function(c) { %>
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title"><a href="/products/<%= c.slug %>"><%= c.title %></a></h4>                      
-                      </div>
-                    </div>
-                  <% }); %>
-                </div><!--/category-products-->
-                
-                <div class="brands_products"><!--brands_products-->
-                  <h2>Brands</h2>
-                  <div class="brands-name">
-                    <ul class="nav nav-pills nav-stacked">
-                      <li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-                      <li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-                      <li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
+            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                      <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                      Sportswear
+                    </a>
+                  </h4>
+                </div>
+                <div id="sportswear" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <ul>
+                      <li><a href="#">Nike </a></li>
+                      <li><a href="#">Under Armour </a></li>
+                      <li><a href="#">Adidas </a></li>
+                      <li><a href="#">Puma</a></li>
+                      <li><a href="#">ASICS </a></li>
                     </ul>
                   </div>
-                </div><!--/brands_products-->
+                </div>
               </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                      <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                      Mens
+                    </a>
+                  </h4>
+                </div>
+                <div id="mens" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <ul>
+                      <li><a href="#">Fendi</a></li>
+                      <li><a href="#">Guess</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+                    
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                      <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                      Womens
+                    </a>
+                  </h4>
+                </div>
+                <div id="womens" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <ul>
+                      <li><a href="#">Fendi</a></li>
+                      <li><a href="#">Guess</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <% categories.forEach(function(c) { %>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title"><a href="/products/<%= c.slug %>"><%= c.title %></a></h4>                      
+                  </div>
+                </div>
+              <% }); %>
+            </div><!--/category-products-->
+                
+            <div class="brands_products"><!--brands_products-->
+              <h2>Brands</h2>
+              <div class="brands-name">
+                <ul class="nav nav-pills nav-stacked">
+                  <li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
+                  <li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+                  <li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
+                </ul>
+              </div>
+            </div><!--/brands_products-->
+          </div>
         </div> <!-- left side bar col ends here-->
         <div class="col-sm-9">
-          <div class="features_items"><!--features_items-->
-            <h2 class="title text-center">Features Items</h2>
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="product-image-wrapper">
-                  <div class="single-products">
-                    <div class="productinfo text-center">
-                      <img src="/product_images/5ee3b881d1346a1594134416/41.png" alt="" />
-                      <h2>$56</h2>
-                      <p>Easy Polo Black Edition</p>
-                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+          <!-- Category Area Start-->
+          <section class="category-area section-padding30">
+            <div class="container-fluid">
+              <!-- Section Tittle -->
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="section-tittle text-center mb-85">
+                    <h2>Shop by Category</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-4 col-lg-6">
+                  <div class="single-category mb-30">
+                    <div class="category-img">
+                      <img src="/images/cat1.jpg" alt="">
+                      <div class="category-caption">
+                        <h2>T-Shirts</h2>
+                        <span class="best"><a href="/products/t-shirts">Best New Deals</a></span>
+                        <span class="collection">New Collection</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                  <div class="single-category mb-30">
+                    <div class="category-img text-center">
+                      <img src="/images/cat2.jpg" alt="">
+                      <div class="category-caption">
+                        <span class="collection">Discount!</span>
+                        <h2>Winter Cloth</h2>
+                        <p>New Collection</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                  <div class="single-category mb-30">
+                    <div class="category-img">
+                      <img src="/images/cat3.jpg" alt="">
+                      <div class="category-caption">
+                        <h2>Man`s Cloth</h2>
+                        <span class="best"><a href="/products/t-shirts">Best New Deals</a></span>
+                        <span class="collection">New Collection</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-3">
-                <div class="product-image-wrapper">
-                  <div class="single-products">
-                    <div class="productinfo text-center">
-                      <img src="/product_images/5ee3b881d1346a1594134416/41.png" alt="" />
-                      <h2>$56</h2>
-                      <p>Easy Polo Black Edition</p>
-                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+            </div> <!-- Container fluid ends -->
+          </section>
+          <!-- Category Area End-->
+
+          <!-- Best Product Start -->
+          <div class="best-product-area lf-padding" >
+            <div class="product-wrapper bg-height" style="background-image: url('assets/img/categori/card.png')">
+              <div class="container position-relative">
+                <div class="row justify-content-between align-items-end">
+                  <div class="product-man position-absolute  d-none d-lg-block">
+                    <img src="/images/card-man.png" alt="">
+                  </div>
+                  <div class="col-xl-2 col-lg-2 col-md-2 d-none d-lg-block">
+                    <div class="vertical-text">
+                      <span>Manz</span>
+                    </div>
+                  </div>
+                  <div class="col-xl-8 col-lg-8">
+                    <div class="best-product-caption">
+                      <h2>Find The Best Product<br> from Our Shop</h2>
+                      <p>Lorem Ipsum dolor is a dummy text for web developers. Feel free to use any time</p>
+                      <a href="/products" class="black-btn">Shop Now</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-3">
-                <div class="product-image-wrapper">
-                  <div class="single-products">
-                    <div class="productinfo text-center">
-                      <img src="/product_images/5ee3b881d1346a1594134416/41.png" alt="" />
-                      <h2>$56</h2>
-                      <p>Easy Polo Black Edition</p>
-                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="product-image-wrapper">
-                  <div class="single-products">
-                    <div class="productinfo text-center">
-                      <img src="/product_images/5ee3b881d1346a1594134416/41.png" alt="" />
-                      <h2>$56</h2>
-                      <p>Easy Polo Black Edition</p>
-                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- row ends here -->
+            </div>
+            <!-- Shape -->
+            <div class="shape bounce-animate d-none d-md-block">
+              <img src="/images/card-shape.png" alt="">
+            </div>
           </div>
+          <!-- Best Product End-->
         </div> <!-- right col ends here -->
       </div> <!-- row ends here-->
-    </div> <!-- Container div ends here -->
+
+      <!-- Shop Method Start-->
+        <div class="shop-method-area section-padding30">
+          <div class="container">
+            <div class="row d-flex justify-content-between">
+              <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="single-method mb-40">
+                  <i class="ti-package"></i>
+                  <h6>Free Shipping Method</h6>
+                  <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="single-method mb-40">
+                  <i class="ti-unlock"></i>
+                  <h6>Secure Payment System</h6>
+                  <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                </div>
+              </div> 
+              <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="single-method mb-40">
+                  <i class="ti-reload"></i>
+                  <h6>Secure Payment System</h6>
+                  <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div> <!-- right col ends here -->
+      
+    
   </section>
 
     

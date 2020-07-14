@@ -42,240 +42,125 @@
     <%- messages('messages', locals) %>
   </div>
     
-  <section>
-    <div class="container">
+  <!-- Category Area Start-->
+  <section class="category-area section-padding30">
+    <div class="container-fluid">
+      <!-- Section Tittle -->
       <div class="row">
-        <div class="col-sm-3">
-          <div class="left-sidebar">
-            <h2>Category</h2>
-              <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                          Sportswear
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="sportswear" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul>
-                          <li><a href="#">Nike </a></li>
-                          <li><a href="#">Under Armour </a></li>
-                          <li><a href="#">Adidas </a></li>
-                          <li><a href="#">Puma</a></li>
-                          <li><a href="#">ASICS </a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordian" href="#mens">
-                          <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                          Mens
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="mens" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul>
-                          <li><a href="#">Fendi</a></li>
-                          <li><a href="#">Guess</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                    
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordian" href="#womens">
-                          <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                          Womens
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="womens" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul>
-                          <li><a href="#">Fendi</a></li>
-                          <li><a href="#">Guess</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <% categories.forEach(function(c) { %>
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h4 class="panel-title"><a href="/products/<%= c.slug %>"><%= c.title %></a></h4>                      
-                      </div>
-                    </div>
-                  <% }); %>
-                </div><!--/category-products-->
-                
-                <div class="brands_products"><!--brands_products-->
-                  <h2>Brands</h2>
-                  <div class="brands-name">
-                    <ul class="nav nav-pills nav-stacked">
-                      <li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-                      <li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-                      <li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
-                    </ul>
-                  </div>
-                </div><!--/brands_products-->
-              </div>
-        </div> <!-- left side bar col ends here-->
-        <div class="col-sm-9">
-          <div class="features_items"><!--features_items-->
-            <h2 class="title text-center">Features Items</h2>
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="product-image-wrapper">
-                  <div class="single-products">
-                    <div class="productinfo text-center">
-                      <img src="/product_images/5ee3b881d1346a1594134416/41.png" alt="" />
-                      <h2>$56</h2>
-                      <p>Easy Polo Black Edition</p>
-                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="product-image-wrapper">
-                  <div class="single-products">
-                    <div class="productinfo text-center">
-                      <img src="/product_images/5ee3b881d1346a1594134416/41.png" alt="" />
-                      <h2>$56</h2>
-                      <p>Easy Polo Black Edition</p>
-                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="product-image-wrapper">
-                  <div class="single-products">
-                    <div class="productinfo text-center">
-                      <img src="/product_images/5ee3b881d1346a1594134416/41.png" alt="" />
-                      <h2>$56</h2>
-                      <p>Easy Polo Black Edition</p>
-                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="product-image-wrapper">
-                  <div class="single-products">
-                    <div class="productinfo text-center">
-                      <img src="/product_images/5ee3b881d1346a1594134416/41.png" alt="" />
-                      <h2>$56</h2>
-                      <p>Easy Polo Black Edition</p>
-                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- row ends here -->
+        <div class="col-lg-12">
+          <div class="section-tittle text-center mb-85">
+            <h2>Shop by Category</h2>
           </div>
-        </div> <!-- right col ends here -->
-      </div> <!-- row ends here-->
-    </div> <!-- Container div ends here -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-lg-6">
+          <div class="single-category mb-30">
+            <div class="category-img">
+              <img src="/images/cat1.jpg" alt="">
+              <div class="category-caption">
+                <h2>T-Shirts</h2>
+                <span class="best"><a href="/products/t-shirts">Best New Deals</a></span>
+                <span class="collection">New Collection</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6">
+          <div class="single-category mb-30">
+            <div class="category-img text-center">
+              <img src="/images/cat2.jpg" alt="">
+              <div class="category-caption">
+                <span class="collection">Discount!</span>
+                <h2>Winter Cloth</h2>
+                <p>New Collection</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-6">
+          <div class="single-category mb-30">
+            <div class="category-img">
+              <img src="/images/cat3.jpg" alt="">
+              <div class="category-caption">
+                <h2>Man`s Cloth</h2>
+                <span class="best"><a href="/products/t-shirts">Best New Deals</a></span>
+                <span class="collection">New Collection</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- Container fluid ends -->
   </section>
-
-    
-          <!-- <div class="navbar-n">
-            <a href="/products">All Products</a>
-            <a href="/products/food">Food</a>
-            <a href="/products/drinks">Drinks</a>
-            <a href="/products/fruits">Fruits</a>
-            <a href="/products/t-shirts">T-Shirts</a>    
-          </div> -->
-      
-          <!-- <section class="header">  
-            <h3>About cmsShoppingCart</h3>
-            <hr>  
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6">
-                    <p style="text-align:center"> 	
-                      <i>cmsShoppingCart is an online shopping web template developed by <strong> EAWebDev </strong>
-                      It is responsive across all platforms by the help of bootstrap. It was developed using MongoDB (Database), Express, Node, Javascript, jQuery, Bootstrap and Html
-                      This template is useful for online shopping. Share your thoughts and review via whatsapp @ +2349038576877 </i>
-                    </p>
-                </div>
-                <div class="col-lg-3"></div>
-              </div>
+  <!-- Category Area End-->
+  
+  <!-- Best Product Start -->
+  <div class="best-product-area lf-padding" >
+    <div class="product-wrapper bg-height" style="background-image: url('/images/home/card.png')">
+      <div class="container position-relative">
+        <div class="row justify-content-between align-items-end">
+          <div class="product-man position-absolute  d-none d-lg-block">
+            <img src="/images/card-man.png" alt="">
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 d-none d-lg-block">
+            <div class="vertical-text">
+              <span>Manz</span>
             </div>
-          </section> -->
-      
-          <!--<section class="header2">
-            <div class="container">
-              <div class="row">
-                <div class="col-4 col-lg-4 icon">
-                  <i class="fas fa-check-square" aria-hidden="true"></i>
-                </div>
-                <div class="col-4 col-lg-4 icon">
-                  <i class="fas fa-check-square" aria-hidden="true"></i>
-                </div>
-                <div class="col-4 col-lg-4 icon">
-                  <i class="fas fa-check-square" aria-hidden="true"></i>
-                </div> -->
-              <!-- </div>
-            </div>  
-            <div class="container">
-              <div class="row">
-                <div class="col-4 col-lg-4 t-icon">
-                  <h3>100%</h3>
-                  <p><strong> FAST!</strong> What is Lorem Ipsum?</p>
-                </div>
-                <div class="col-4 col-lg-4 t-icon">
-                  <h3>100%</h3>
-                  <p><strong> GENUINE!</strong> What is Lorem Ipsum?</p>
-                </div>
-                <div class="col-4 col-lg-4 t-icon">
-                  <h3>100%</h3>
-                  <p><strong> LEGAL!</strong> What is Lorem Ipsum?</p>
-                </div>
-              </div>
-            </div>  
-          </section> -->
-
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="c-container">
-                <img class="img-thumbnail trans" src="/images/18.jpg" alt="">
-                <div class="text-block">
-                    <h3>Cooking <span class="c-style">Oil</span></h3>
-                    <p class="caption2">Get your oil produce delivered to your doorstep</p>
-                </div>
+          </div>
+          <div class="col-xl-8 col-lg-8">
+            <div class="best-product-caption">
+              <h2>Find The Best Product<br> from Our Shop</h2>
+              <p>Lorem Ipsum dolor is a dummy text for web developers. Feel free to use any time</p>
+              <a href="/products" class="black-btn">Shop Now</a>
             </div>
+          </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="c-container">
-                <img class="img-thumbnail trans" src="/images/19.jpg" alt="">
-                <div class="text-block">
-                    <h3>Cooking <span class="c-style">Oil</span></h3>
-                    <p class="caption2">Get your oil produce delivered to your doorstep</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="c-container">
-                <img class="img-thumbnail trans" src="/images/20.jpg" alt="">
-                <div class="text-block">
-                    <h3>Cooking <span class="c-style">Oil</span></h3>
-                    <p class="caption2">Get your oil produce delivered to your doorstep</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</div> -->
+    <!-- Shape -->
+    <div class="shape bounce-animate d-none d-md-block">
+      <img src="/images/card-shape.png" alt="">
+    </div>
+  </div>
+  <!-- Best Product End-->
+  
+  <br> <br>
+  <div class="container">
+    <div class="recommended_items"><!--recommended_items-->
+      <div class="section-tittle text-center mb-85">
+        <h2>Recommended Products</h2>
+      </div>
+    </div>
+      <div class="row">
+        <% products.forEach(function(p) { %>
+          <div class="col-sm-4 col-md-3">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                <div class="productinfo text-center">
+                  <img src="/product_images/<%= p.id %>/<%= p.image %>" alt="" class="pimage">
+                  <h2>&#8358;<%= parseFloat(p.price).toFixed(2) %></h2>
+                  <p><%= p.title %></p>
+                  <a href="/cart/add/<%= p.slug %>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                </div>    
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div><!--/recommended_items-->
+  </div>
 
+  <div class="container">
+    <img class="img-thumbnail" src="/images/big-add.png" alt="">
+  </div> <br>
+    
+  <!-- <div class="navbar-n">
+    <a href="/products">All Products</a>
+    <a href="/products/food">Food</a>
+    <a href="/products/drinks">Drinks</a>
+    <a href="/products/fruits">Fruits</a>
+    <a href="/products/t-shirts">T-Shirts</a>    
+  </div> -->
+      
 <%- include("footer") %>
