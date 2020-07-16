@@ -2,7 +2,7 @@
 
 <br><br>
 <div class="container">
-    <img class="img-thumbnail" src="/images/big-add.png" alt="">
+    <img class="img-fluid" src="/images/big-add.png" alt="">
 </div>
 
 <br><br>  
@@ -20,13 +20,7 @@
 
 <div class="container">
     <div class="features_items"><!--features_items-->
-        <% categories.forEach(function(c) { %>
-            <% for (var i=1; i<=c.length; i++) { %>
-                <% console.log('food'); %>
-                
-            <% } %> <h2 class="title text-center"><%= c.title %></h2>
-        <% }); %> 
-        
+        <h2 class="title text-center">Product category</h2>
     <div class="row">
         <% products.forEach(function(p) { %>
             <div class="col-lg-3 col-md-4 col-sm-6 col-12">

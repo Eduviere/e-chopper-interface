@@ -145,10 +145,6 @@ app.get('/checkout/payment', isUser, function(req, res){
     res.render('payment');
 });
 
-app.get("/pages/new", function(req, res){
-    res.render("payment");
-});
-
 // app.post("/pages", function(req, res){
 //     Page.create(req.body.page, function(err, newPage){
 //         if(err){

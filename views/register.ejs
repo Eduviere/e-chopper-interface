@@ -55,23 +55,26 @@
           <br><br>
           <div class="container">
             <form method="POST" action="/users/register">
-              <input type="text" name="name" class="input-field" placeholder="Full Name">
-              <input type="text" name="username" class="input-field" placeholder="Username">
-              <input type="email" name="email" class="input-field" placeholder="example@email.com">
-              <input type="password" name="password" class="input-field" placeholder="Enter Password">
-              <input type="password" name="password2" class="input-field" placeholder="Confirm Password">
+              <input type="text" name="name" class="input-field" placeholder="   Full Name">
+              <input type="text" name="username" class="input-field" placeholder="   Username">
+              <input type="email" name="email" class="input-field" placeholder="   example@email.com">
+              <input type="password" name="password" class="input-field" placeholder="   Enter Password">
+              <input type="password" name="password2" class="input-field" placeholder="   Confirm Password">
               <input type="checkbox" class="check-box"><span>I agree to the terms & Conditions</span>
-              <button type="submit" class="submit-btn">
-                <i class="fas fa-envelope"></i>
-                <span class="ibtn"> CREATE ACCOUNT </span>
-              </button>
+              <div class="container">
+                <button type="submit" class="btn btn-block btn-lg btn-default add-to-cart">
+                  <span class="ibtn"> CREATE ACCOUNT </span>
+                </button>
+              </div>
               <br>
             </form><br>
             <h2 class="title text-center">OR</h2>
-              <p style="text-align: center;"> Already have an account? <br><br>
-              <a style="color:darkgoldenrod; font-size: 20px" href="/user/login">LOGIN</a>
-              
-              <br><br>
+            <p style="text-align: center;"> Already have an account? <br><br>
+            <div class="container">
+              <a href="/users/login" class="btn btn-block btn-lg btn-default add-to-cart">
+                <span class="ibtn"> LOGIN </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

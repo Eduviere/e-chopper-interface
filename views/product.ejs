@@ -2,7 +2,7 @@
 
 <br><br>
 <div class="container">
-    <img class="img-thumbnail" src="/images/big-add.png" alt="">
+    <img class="img-fluid" src="/images/big-add.png" alt="">
 </div>
 
 <br><br>  
@@ -23,18 +23,20 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-      <div class="card text-center">
-        <div class="card-body">
-          <h5 class="card-text"><%= p.title %></h5>
-          <img src="/product_images/<%= p.id %>/<%= p.image %>" alt="" class="pimage">                    
-          <p><%= p.desc %></p>    
-          <span class="naira">&#8358;<%= parseFloat(p.price).toFixed(2) %></span>
-          <% if(loggedIn) { %>
-            <a class="btn btn-danger btn-block" href="/cart/add/<%= p.slug %>"> Add to Cart </a>
-          <% } else { %>
-            <p>You must be logged in to purchase items</p>
-          <% } %>
-          <!-- <button type="button" class="btn btn-danger btn-block">Add to Cart</button> -->
+      <div class="product-image-wrapper">
+        <div class="single-products">
+          <div class="productinfo text-center">
+            <h3><%= p.title %></h3>
+            <img src="/product_images/<%= p.id %>/<%= p.image %>" alt="" class="pimage">                    
+            <p><%= p.desc %></p>    
+            <h2>&#8358;<%= parseFloat(p.price).toFixed(2) %></h2>
+            <% if(loggedIn) { %>
+              <a class="btn btn-danger btn-block" href="/cart/add/<%= p.slug %>"> Add to Cart </a>
+            <% } else { %>
+              <p>You must be logged in to purchase items</p>
+            <% } %>
+            <!-- <button type="button" class="btn btn-danger btn-block">Add to Cart</button> -->
+          </div>
         </div>
       </div>
     </div>    

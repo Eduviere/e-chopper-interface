@@ -83,22 +83,9 @@
                                 <!-- Main-menu -->
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>                                                
-                                        <ul id="navigation">    
-                                            <% pages.forEach(function(page) { %>
-                                                <% if (page.slug == "home") { %>
-                                                    <li><a href="/"><%= page.title %></a></li>
-                                                <% } else { %>
-                                                    <li><a href="/<%= page.slug %>"><%= page.title %> </a></li>
-                                                <% } %>
-                                            <% }); %>                                                                                                                           
-
-                                            <!-- <li class="hot"><a href="#">Latest</a>
-                                                <ul class="submenu">
-                                                    <li><a href="#"> Product list</a></li>
-                                                    <li><a href="#"> Product Details</a></li>
-                                                </ul>
-                                            </li> -->
-                                            <li><a href="#">Products</a>
+                                        <ul id="navigation">                                                                                                                                     
+                                            <li><a href="/">Home</a></li>
+                                            <li><a href="#">Catagories</a>
                                                 <ul class="submenu">
                                                     <li><a href="/products">All Products</a></li>
                                                     <% categories.forEach(function(c) { %>
@@ -106,7 +93,20 @@
                                                     <% }); %>
                                                 </ul>
                                             </li>
-                                            <li><a href="/users/login">Accounts <i class="fa fa-user"></i></a>
+                                            <li class="hot"><a href="#">Latest</a></li>
+                                            
+                                            <li><a href="#">Pages</a>
+                                                <ul class="submenu">
+                                                    <% pages.forEach(function(page) { %>
+                                                        <% if (page.slug == "home") { %>
+                                                            <li><a href="/"><%= page.title %></a></li>
+                                                        <% } else { %>
+                                                            <li><a href="/<%= page.slug %>"><%= page.title %> </a></li>
+                                                        <% } %>
+                                                    <% }); %>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/users/login">Accounts</a>
                                                 <ul class="submenu">
                                                     <% if(user) { %>
                                                         <li>
@@ -139,36 +139,33 @@
                                     </nav>
                                 </div>
                             </div> 
-                            
                             <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
                                 <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
-                                    <li>
-                                        <div class="wrapper0">    
-                                            <a href="/cart/checkout"><i id="cart-icon" class="fa" style="font-size: 22px">&#xf07a;</i>
-                                                <span class="cart-0">    
-                                                    <% if (typeof cart !== "undefined") { %>
-                                                        <%= cart.length %>
-                                                    <% } else { %>
-                                                        0
-                                                    <% } %>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </li>
                                     <li class="d-none d-xl-block">
                                         <div class="form-box f-right ">
-                                            <input type="text" name="Search" placeholder="Search">
+                                            <input type="text" name="Search" placeholder="Search products">
                                             <div class="search-icon">
                                                 <i class="fas fa-search special-tag"></i>
                                             </div>
                                         </div>
-                                    </li>
-                                    
-                                    <!-- <li>
+                                     </li>
+
+                                    <li>
                                         <div class="shopping-card">
-                                            <a href="/cart/checkout"><i class="fas fa-shopping-cart"></i></a>
+                                            
+                                                <a href="/cart/checkout"><i id="cart-icon" class="fa" style="font-size: 18px">&#xf07a;</i>
+                                                    <span class="cart-0">    
+                                                        <% if (typeof cart !== "undefined") { %>
+                                                            <%= cart.length %>
+                                                        <% } else { %>
+                                                            0
+                                                        <% } %>
+                                                    </span>
+                                                </a>
+                                            
                                         </div>
-                                    </li> -->
+                                    </li>
+                                   
                                 </ul>
                             </div>
                             <!-- Mobile Menu -->
