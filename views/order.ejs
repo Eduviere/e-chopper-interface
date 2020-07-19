@@ -1,0 +1,72 @@
+<%- include("header") %>s
+
+  <div class="container">
+    <h2 class="text-center">Delivery information</h2><br><br>
+    <div class="row">
+      <div class="col-md-4">
+        <h2 class="btn btn-block btn-lg btn-info">Your Basket</h2>
+        <table class="table table-striped align-middle">
+          <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+          </tr>
+          <% var total = 0; %>
+          <% cart.forEach(function(product){ %>
+            <% var sub = parseFloat(product.qty * product.price).toFixed(2) %>
+            <% total += +sub %>
+            <tr>
+              <td><%= product.title %></td>
+              <td>&#8358;<%= product.price %></td>
+              <td><%= product.qty %></td>
+              <td><%= sub %></td>
+              </tr>  
+            <% }); %>
+          <tr>
+            <td colspan="6" align="right"><strong>Total: </strong>&#8358; <%= parseFloat(total).toFixed(2) %> </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-8">
+        <form action="/order" method="POST">
+          <div class="form-group">
+            <label for="name">Full name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="mCode" required>        
+          </div>
+          <div class="form-group">
+            <label for="gsm">Mobile Number:</label>
+            <input type="text" class="form-control" name="gsm" id="gsm" placeholder="09038576877" required>        
+          </div>
+          <div class="form-group">
+            <label for="town">Town/City:</label>
+            <select id="town" name="town" class="form-control" required>
+              <option>Ughelli</option>
+              <option>Asaba</option>
+              <option>Warri</option>
+              <option>Sapele</option>
+              <option>Agbarho</option>
+              <option>Agbarha</option>
+              <option>Usiefrun</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="address_type">Address Type:</label>
+            <select class="form-control" name="address_type" id="address-type" required>
+              <option>Home</option>
+              <option>Office</option>
+              <option>Commercial</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea name="address" id="address" cols="30" rows="10" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-lg btn-success">Deliver to this address</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br>
+
+<%- include("footer") %>s

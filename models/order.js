@@ -1,28 +1,28 @@
 var mongoose                = require('mongoose');
-var OrderSchema = require('../models/order.js');
 
 // User Schema
-var UserSchema = new mongoose.Schema({
+var OrderSchema = new mongoose.Schema({
+    // full name, gsm, town address_type, address
     name: {
         type: String,
         required: true
     },
-    email: {
+    gsm: {
         type: String,
         required: true
     },
-    username: {
+    town: {
         type: String,
         required: true
     },
-    password: {
+    address_type: {
         type: String,
         required: true
     },
-    admin: {
-        type: Number
-    },
-    orders: [OrderSchema]
+    address: {
+        type: String,
+        required: true
+    }
 });
 
-var User = module.exports = mongoose.model('User', UserSchema);
+var Order = module.exports = mongoose.model('Order', OrderSchema);

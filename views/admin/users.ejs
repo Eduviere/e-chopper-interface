@@ -9,45 +9,31 @@
       <% }); %>
     <% } %>
     
-    <h2 class="page-title">Products</h2>
-    <a href="/admin/products/add-product" class="btn btn-outline-dark"> Add a new product </a>
+    <h2 class="page-title">Users</h2>
     <br><br>
 
-    <% if(count > 0) { %>
-
-        <table class="table table-striped align-middle">
-            <thead>
-                <tr class="home">
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th>Product Image</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr class="home">
+                <th>_id</th>
+                <th>Fullname</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody style="font-size: 14px;">
+            <% users.forEach(function(user){ %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.password %></td>
+                    <td><a class="confirmDeletion btn btn-danger" href="/admin/users/delete-user/<%= user._id %>">Delete</a></td>              
                 </tr>
-            </thead>
-            <tbody>
-                <% products.forEach(function(product){ %>
-                    <tr>
-                        <td><%= product.title %></td>
-                        <td>&#8358;<%= parseFloat(product.price).toFixed(2) %></td>
-                        <td><%= product.category %></td>
-                        <td>
-                            <% if(product.image == "") { %>
-                                <img id="noimage" src="/images/1.jpg">
-                            <%  } else {  %>
-                                <img id="noimage" src="/product_images/<%= product._id %>/<%= product.image %>">
-                            <%  }   %>
-                        </td>
-                        <td><a href="/admin/products/edit-product/<%= product._id %>">Edit</a></td>
-                        <td><a class="confirmDeletion" href="/admin/products/delete-product/<%= product._id %>">Delete</a></td>              
-                    </tr>
-                <% }); %>
-            </tbody>
-        </table>
-
-    <% } else { %>
-        <h3 class="text-center"> No Product Found!!! </h3>
-    <% }  %>
-
+            <% }); %>
+        </tbody>
+    </table>
 <%- include("../adminfooter") %>
