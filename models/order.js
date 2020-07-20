@@ -22,6 +22,21 @@ var OrderSchema = new mongoose.Schema({
     address: {
         type: String,
         required: true
+    },
+    product_title: {
+        type: String,
+    },
+    product_price: {
+        type: String,
+    },
+    product_qty: {
+        type: String,
+    },
+    product_sub: {
+        type: String,
+    },
+    product_amount: {
+        type: String,
     }
 });
 

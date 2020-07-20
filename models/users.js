@@ -22,7 +22,18 @@ var UserSchema = new mongoose.Schema({
     admin: {
         type: Number
     },
-    orders: [OrderSchema]
+    orders: [
+        { 
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Order"
+        }
+    ],
+    products: [
+        { 
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Product"
+        }
+    ]
 });
 
 var User = module.exports = mongoose.model('User', UserSchema);

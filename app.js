@@ -240,6 +240,10 @@ app.post('/order', function(req, res){
     var town = req.body.town;
     var address_type = req.body.address_type;
     var address = req.body.address;
+    var product_title = req.body.product_title;
+    var product_price = req.body.product_price;
+    var product_qty = req.body.product_qty;
+    var product_amount = req.body.product_amount;
     
     var errors = req.validationErrors();
     
@@ -251,7 +255,11 @@ app.post('/order', function(req, res){
             gsm: gsm,
             town: town,
             address_type: address_type,
-            address: address
+            address: address,
+            product_title: product_title,
+            product_price: product_price,
+            product_qty: product_qty,
+            product_amount: product_amount
         });
         order.save(function(err) {
             if(err) {
@@ -260,14 +268,14 @@ app.post('/order', function(req, res){
                 req.flash('success', 'Congratulation! Your order is taken and our agent will contact you shortly');
                 res.redirect('/');
             }
+            // User.find({}).populate(orders).populate(products).exec(function(err, user){
+            //     if (err) {
+            //         console.log(err);
+            //     } 
+            //  });
         });
-        // User.find({}).populate(orders).exec(function(err, user){
-        //    if (err) {
-        //        console.log(err);
-        //    } else {
-        //        console.log(user);
-        //    }
-        // });
+        
+        
     }
 });
 
